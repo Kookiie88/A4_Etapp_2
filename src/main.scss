@@ -303,6 +303,10 @@ html {
         width: 363px;
     }
 
+    &__card:hover {
+        box-shadow: 0 0 15px 5px #b6bdb5;
+    }
+
     &__img {
         background-image: url("assets/image 2.png");
         background-position: center;
