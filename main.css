@@ -13,7 +13,7 @@ html {
 
 /*-----Header section-----*/
 .header {
-  background-color: #011827;
+  background-color: #021928;
   display: flex;
   flex-direction: column;
   height: 144px;
@@ -127,7 +127,7 @@ html {
   }
 }
 .hamburgerMenu__menuCont {
-  background-color: #011827;
+  background-color: #021928;
   bottom: 23px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3490196078);
   display: none;
@@ -321,7 +321,7 @@ html {
   background-color: #8acfe5;
   border: none;
   border-radius: 4px;
-  color: #011827;
+  color: #021928;
   cursor: pointer;
   font-family: "roboto";
   font-size: 1rem;
@@ -561,7 +561,7 @@ html {
 
 .break {
   align-items: center;
-  background-color: #011827;
+  background-color: #021928;
   display: flex;
   flex-direction: column;
   height: 500px;
@@ -599,7 +599,7 @@ html {
   }
 }
 .break__btn {
-  background-color: #011827;
+  background-color: #021928;
   border: solid 2px #8acfe5;
   border-radius: 4px;
   color: #8acfe5;
@@ -725,7 +725,7 @@ html {
 
 /*-----Footer section-----*/
 .footer {
-  background-color: #011827;
+  background-color: #021928;
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -1133,7 +1133,7 @@ html {
   margin: 42px 0px;
 }
 .filter__filterBoxOpenButton {
-  background-color: #011827;
+  background-color: #021928;
   border-radius: 6px;
   color: #ffffff;
   cursor: pointer;
