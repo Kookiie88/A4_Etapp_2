@@ -6,9 +6,7 @@ const bookingContainer = document.querySelector(".booking-container");
 
 const bookingButtonOne = document.querySelector(".booking-container__button");
 
-const submitBookingButton = document.querySelector(
-    ".booking-container__submit-button"
-);
+const submitBookingButton = document.querySelector(".booking-container__submit-button");
 
 //Function that fetches data from api
 async function fetchData(url) {
@@ -38,9 +36,7 @@ for (let i = 0; i < bookingBtn.length; i++) {
 
         /*Declaring variable as date input then setting the 
         starting value of date select to todays date*/
-        const dateInput = document.querySelector(
-            ".booking-container__dateInput"
-        );
+        const dateInput = document.querySelector(".booking-container__dateInput");
         dateInput.valueAsDate = new Date();
 
         /*Declaring variable to todays date with correct format, 
@@ -57,9 +53,7 @@ for (let i = 0; i < bookingBtn.length; i++) {
 
         //Changes style of element and removes class
         document.querySelector(".body").style.overflow = "hidden";
-        document
-            .querySelector(".booking-container__step-one")
-            .classList.remove("invisible");
+        document.querySelector(".booking-container__step-one").classList.remove("invisible");
 
         //Getting the right challenge and id
         const challenge = challenges[i];
@@ -75,22 +69,14 @@ for (let i = 0; i < bookingBtn.length; i++) {
 //Eventlistener function that reacts to click on "search available times" button
 bookingButtonOne.addEventListener("click", async () => {
     //Sets variable value to the users input of .booking-container__dateInput
-    let dateValue = document.querySelector(
-        ".booking-container__dateInput"
-    ).value;
+    let dateValue = document.querySelector(".booking-container__dateInput").value;
 
     //Adds and removes classes of elements
-    document
-        .querySelector(".booking-container__step-one")
-        .classList.add("invisible");
-    document
-        .querySelector(".booking-container__step-two")
-        .classList.remove("invisible");
+    document.querySelector(".booking-container__step-one").classList.add("invisible");
+    document.querySelector(".booking-container__step-two").classList.remove("invisible");
 
     document.querySelector(".second-step").classList.add("fade-in");
-    document
-        .querySelector(".booking-container__submit-button")
-        .classList.add("fade-in");
+    document.querySelector(".booking-container__submit-button").classList.add("fade-in");
 
     /*Adds variables into url and runs function fetchData then 
     puts return value into dateApi variable*/
@@ -116,7 +102,7 @@ submitBookingButton.addEventListener("click", async () => {
         const dotPos = email.lastIndexOf(".");
         return atPos > 0 && dotPos > atPos + 1 && dotPos < email.length - 1;
     }
-/*If statement that ensures that the name input and email input 
+    /*If statement that ensures that the name input and email input 
 has correct format, else returns*/
     if (
         emailInput.value == "" ||
@@ -129,27 +115,18 @@ has correct format, else returns*/
     ) {
         return;
     }
-//Adds and removes classes of elements
-    document
-        .querySelector(".booking-container__step-two")
-        .classList.add("invisible");
-    document
-        .querySelector(".booking-container__step-three")
-        .classList.remove("invisible");
-    document
-        .querySelector(".booking-container__step-three")
-        .classList.add("fade-in");
+    //Adds and removes classes of elements
+    document.querySelector(".booking-container__step-two").classList.add("invisible");
+    document.querySelector(".booking-container__step-three").classList.remove("invisible");
+    document.querySelector(".booking-container__step-three").classList.add("fade-in");
 
-    const res = await fetch(
-        "https://lernia-sjj-assignments.vercel.app/api/booking/reservations",
-        {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(booking),
-        }
-    );
+    const res = await fetch("https://lernia-sjj-assignments.vercel.app/api/booking/reservations", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(booking),
+    });
     const dataBooking = await res.json();
 });
 
@@ -158,19 +135,11 @@ function escapeBooking() {
     bookingContainer.style.display = "none";
     document.querySelector(".body").style.overflow = "";
 
-    document
-        .querySelector(".booking-container__step-one")
-        .classList.add("invisible");
-    document
-        .querySelector(".booking-container__step-two")
-        .classList.add("invisible");
-    document
-        .querySelector(".booking-container__step-three")
-        .classList.add("invisible");
+    document.querySelector(".booking-container__step-one").classList.add("invisible");
+    document.querySelector(".booking-container__step-two").classList.add("invisible");
+    document.querySelector(".booking-container__step-three").classList.add("invisible");
 
-    document
-        .querySelectorAll(".booking-container__date")
-        .forEach((element) => element.remove());
+    document.querySelectorAll(".booking-container__date").forEach((element) => element.remove());
 
     document.querySelector(".time").innerHTML = "";
     document.querySelector(".participants").innerHTML = "";
@@ -202,15 +171,13 @@ const createParticipants = function (minPar, maxPar) {
         const participantOption = document.createElement("option");
         participantOption.classList.add("partOption");
         participantOption.value = i;
-        if(i == 1){
+        if (i == 1) {
             participantOption.innerText = `${i} Participant`;
             particiSelect.appendChild(participantOption);
-        }else{
+        } else {
             participantOption.innerText = `${i} Participants`;
             particiSelect.appendChild(participantOption);
         }
-        
-        
     }
 };
 
