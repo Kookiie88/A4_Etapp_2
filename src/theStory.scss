@@ -1,0 +1,93 @@
+.employees {
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    &__header {
+        font-size: 50px;
+        margin: 50px 0 20px 0;
+    }
+
+    &__text {
+        font-size: 18px;
+        font-weight: 600;
+        max-width: 480px;
+        text-align: center;
+    }
+
+    &__cards {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1280px;
+        justify-content: center;
+        gap: 38px;
+        margin-top: 50px;
+    }
+
+    &__employee {
+        display: flex;
+        width: 330px;
+        flex-direction: column;
+        border-radius: 45px;
+    }
+
+    &__cardImage {
+        width: 330px;
+        height: 330px;
+        border-radius: 45px;
+        margin-bottom: 20px;
+
+        &.employees__cardImageOne {
+            background: url(../assets/employeeOne.png);
+            background-size: cover;
+            background-position: center;
+        }
+
+        &.employees__cardImageTwo {
+            background: url(../assets/employeeTwo.png);
+            background-size: cover;
+            background-position: center;
+        }
+
+        &.employees__cardImageThree {
+            background: url(../assets/employeeOne.png);
+            background-size: cover;
+            background-position: center;
+        }
+
+        &.employees__cardImageFour {
+            background: url(../assets/employeeTwo.png);
+            background-size: cover;
+            background-position: center;
+        }
+
+        &.employees__cardImageFive {
+            background: url(../assets/employeeOne.png);
+            background-size: cover;
+            background-position: center;
+        }
+
+        &.employees__cardImageSix {
+            background: url(../assets/employeeTwo.png);
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+    &__cardText,
+    &__cardName {
+        padding: 0px 20px;
+        font-size: 18px;
+        color: black;
+        margin: 0;
+    }
+
+    &__cardName {
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+}
