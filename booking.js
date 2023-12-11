@@ -115,6 +115,12 @@ has correct format, else returns*/
     ) {
         return;
     }
+
+    //Check so thats its only numbers 
+    if (!/^\d{10}$/.test(numInput.value)) {
+        // If not, return
+        return;
+    }
     //Adds and removes classes of elements
     document.querySelector(".booking-container__step-two").classList.add("invisible");
     document.querySelector(".booking-container__step-three").classList.remove("invisible");
@@ -161,6 +167,7 @@ const nameInput = document.querySelector(".booking-container__name-input");
 const emailInput = document.querySelector(".booking-container__e-mail-input");
 const particiSelect = document.querySelector(".participants");
 const timeInput = document.querySelector(".time");
+const numInput = document.querySelector(".booking-container__number-input");
 
 //creating obj for the booking request
 let booking = {};

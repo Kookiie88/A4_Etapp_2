@@ -1051,6 +1051,14 @@ html {
   border-radius: 5px;
   border: solid lightgrey;
 }
+.booking-container__number-input {
+  width: 80%;
+  max-width: 300px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  border: solid lightgrey;
+}
 .booking-container__select {
   width: 200px;
   height: 40px;
@@ -1329,6 +1337,16 @@ html {
   margin-bottom: 10px;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0%;
+    scale: 80%;
+  }
+  100% {
+    opacity: 100%;
+    scale: 100%;
+  }
+}
 /*----theStory page----*/
 .hero {
   display: flex;
@@ -1580,15 +1598,4 @@ html {
   font-weight: bold;
   font-size: 20px;
   margin-bottom: 10px;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0%;
-    scale: 80%;
-  }
-  100% {
-    opacity: 100%;
-    scale: 100%;
-  }
 }
