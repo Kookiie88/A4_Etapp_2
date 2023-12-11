@@ -152,13 +152,22 @@ html {
         background-color: #8acfe5;
         border: none;
         border-radius: 4px;
-        color: #011827;
+        color: #021928;
         cursor: pointer;
         font-family: "roboto";
         font-size: 1rem;
         font-weight: 700;
         height: 66px;
         width: 308px;
+
+        &:hover {
+            background-color: #7fbfd4;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+        &:active {
+            background-color: #8acfe5;
+            transform: scale(0.98);
+        }
 
         @include breakpointMax($xs) {
             width: fit-content;
@@ -179,6 +188,19 @@ html {
         height: 19.97px;
         margin-top: 30px;
         text-decoration: underline;
+
+        &:hover {
+            @include breakpoint($small) {
+                background-color: #d11609;
+                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            }
+        }
+        &:active {
+            @include breakpoint($small) {
+                background-color: #e3170a;
+                transform: scale(0.98);
+            }
+        }
 
         @include breakpoint($small) {
             background-color: #e3170a;
@@ -304,6 +326,10 @@ html {
         width: 363px;
     }
 
+    &__card:hover {
+        box-shadow: 0 0 15px 5px #b6bdb5;
+    }
+
     &__img {
         background-image: url("assets/image 2.png");
         background-position: center;
@@ -366,6 +392,15 @@ html {
         padding: 0 5px 0 5px;
         width: fit-content;
         min-width: 179.28px;
+
+        &:hover {
+            background-color: #d11609;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+        &:active {
+            background-color: #e3170a;
+            transform: scale(0.98);
+        }
     }
 }
 
@@ -384,7 +419,7 @@ html {
 
 .break {
     align-items: center;
-    background-color: #011827;
+    background-color: #021928;
     display: flex;
     flex-direction: column;
     height: 500px;
@@ -415,7 +450,7 @@ html {
         }
     }
     &__btn {
-        background-color: #011827;
+        background-color: #021928;
         border: solid 2px #8acfe5;
         border-radius: 4px;
         color: #8acfe5;
@@ -435,10 +470,16 @@ html {
         @include breakpoint($xxl) {
             transform: scale(1.2);
         }
-    }
-    &__btn:hover {
-        border-color: #ffffff;
-        color: #ffffff;
+
+        &:hover {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+        &:active {
+            transform: scale(0.98);
+            border-color: #8acfe5;
+            color: #8acfe5;
+        }
     }
 }
 
@@ -505,6 +546,14 @@ html {
         margin: 25px 0px 64px 21px;
         width: 308px;
 
+        &:hover {
+            background-color: #d11609;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+        &:active {
+            background-color: #e3170a;
+        }
+
         @include breakpointMax($xs) {
             width: fit-content;
         }
@@ -534,3 +583,6 @@ html {
 
 /*----sort section----*/
 @import "sort";
+
+/*----theStory page----*/
+@import "theStory";
