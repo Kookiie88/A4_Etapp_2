@@ -1329,6 +1329,17 @@ html {
 .filter__checkboxLabel {
   margin-bottom: 10px;
 }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0%;
+    scale: 80%;
+  }
+  100% {
+    opacity: 100%;
+    scale: 100%;
+  }
+}
 /*----sort section----*/
 .sortBy__sortChallenges {
   position: relative;
@@ -1369,6 +1380,10 @@ html {
   position: relative;
   top: 0;
   cursor: pointer;
+}
+.sortBy__sortChallenges-content > span {
+  display: flex;
+  justify-content: space-between;
 }
 .sortBy__sortChallenges-content > span:hover {
   color: #8acfe5;
@@ -1625,15 +1640,4 @@ html {
   font-weight: bold;
   font-size: 20px;
   margin-bottom: 10px;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0%;
-    scale: 80%;
-  }
-  100% {
-    opacity: 100%;
-    scale: 100%;
-  }
 }

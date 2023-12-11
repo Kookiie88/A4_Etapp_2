@@ -39,6 +39,9 @@
         top: 0;
         cursor: pointer;
         & > span {
+            display: flex;
+            justify-content: space-between;
+
             &:hover {
                 color: #8acfe5;
             }
