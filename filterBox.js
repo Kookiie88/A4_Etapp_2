@@ -3,10 +3,10 @@ import { challenges } from "./fetchChallenges.js";
 //Getting DOM elements to be used globally
 const onlineCheckbox = document.querySelector(".filter__onlineCheckbox");
 const onSiteCheckbox = document.querySelector(".filter__onSiteCheckbox");
-const inputFilter = document.querySelector('.filter__inputFilter');
-const openSearchBox = document.querySelector('.filter__filterBoxOpenButton');
-const searchBox = document.querySelector('.filter__filterBox');
-const closeSearchBox = document.querySelector('.filter__closeButton');
+const inputFilter = document.querySelector(".filter__inputFilter");
+const openSearchBox = document.querySelector(".filter__filterBoxOpenButton");
+const searchBox = document.querySelector(".filter__filterBox");
+const closeSearchBox = document.querySelector(".filter__closeButton");
 
 //Setting current min and max rating
 let currentMinRating = 0;
@@ -27,17 +27,19 @@ onSiteCheckbox.addEventListener("change", () => {
     setSearchParams("onsite", onSiteCheckbox.checked);
 });
 
-inputFilter.addEventListener("input", () =>{
+inputFilter.addEventListener("input", () => {
     filterData(challenges);
 });
-openSearchBox.addEventListener('click', () => {
+openSearchBox.addEventListener("click", () => {
     searchBox.style.display = "flex";
     openSearchBox.style.display = "none";
-})
-closeSearchBox.addEventListener('click', () => {
+    searchBox.classList.add("filter__filterBox--open");
+});
+closeSearchBox.addEventListener("click", () => {
     searchBox.style.display = "";
     openSearchBox.style.display = "";
-})
+    searchBox.classList.remove("filter__filterBox--open");
+});
 
 /*
 This function, getAllLabels, is used to extract all unique labels from an array of challenges. 
@@ -54,7 +56,7 @@ function getAllLabels(challenges) {
             uniqueLabels.add(label);
         });
     });
-  
+
     return Array.from(uniqueLabels);
 }
 
@@ -98,7 +100,13 @@ function addEventListenersToButtons(tagButtons) {
         button.addEventListener("click", () => {
             button.classList.toggle("filter__tagButton--selected");
             filterData(challenges);
-            setSearchParams('tags', tagButtons.filter(button => button.classList.contains('filter__tagButton--selected')).map(button => button.innerHTML.toLowerCase()).join('+'))
+            setSearchParams(
+                "tags",
+                tagButtons
+                    .filter((button) => button.classList.contains("filter__tagButton--selected"))
+                    .map((button) => button.innerHTML.toLowerCase())
+                    .join("+")
+            );
         });
     });
 }
@@ -122,7 +130,10 @@ function setSearchParams(key, value) {
             searchParams.delete(key);
         }
     });
-    const newRelativePath = searchParams.size > 0 ? window.location.pathname + "?" + decodeURIComponent(searchParams) : window.location.pathname;
+    const newRelativePath =
+        searchParams.size > 0
+            ? window.location.pathname + "?" + decodeURIComponent(searchParams)
+            : window.location.pathname;
     history.pushState(null, "", newRelativePath);
 }
 
@@ -180,7 +191,7 @@ function byTag(filteredData) {
 
 //filter function by rating (Fredrick)
 function byRating(filteredData) {
-    return filteredData.filter(challenge => {
+    return filteredData.filter((challenge) => {
         return challenge.rating >= currentMinRating && challenge.rating <= currentMaxRating;
     });
 }
@@ -188,68 +199,68 @@ function byRating(filteredData) {
 //filter function by keyword search (Fredrick)
 function byKeyword(filteredData) {
     const inputText = inputFilter.value.toLowerCase();
-    if(!inputText) return filteredData;
-    return filteredData.filter(challenge => {
+    if (!inputText) return filteredData;
+    return filteredData.filter((challenge) => {
         const wordsToSearch = challenge.title.concat(challenge.description).toLowerCase();
         return wordsToSearch.includes(inputText);
-    })
-};
+    });
+}
 
 function createStars(parent, rating) {
     for (let i = 0; i < 5; i++) {
-        const iTag = document.createElement('i');
-        iTag.classList.add('fa-star');
-        i < rating ? iTag.classList.add('fa-solid') : iTag.classList.add('fa-regular')
+        const iTag = document.createElement("i");
+        iTag.classList.add("fa-star");
+        i < rating ? iTag.classList.add("fa-solid") : iTag.classList.add("fa-regular");
         parent.appendChild(iTag);
     }
 }
 
 function updateStars(minRating, maxRating) {
     Array.from(minRating.children).forEach((child, index) => {
-        if(currentMinRating > index){
+        if (currentMinRating > index) {
             child.classList = "fa-star fa-solid";
         } else {
             child.classList = "fa-star fa-regular";
         }
-    })
+    });
     Array.from(maxRating.children).forEach((child, index) => {
-        if(currentMaxRating > index){
+        if (currentMaxRating > index) {
             child.classList = "fa-star fa-solid";
         } else {
             child.classList = "fa-star fa-regular";
         }
-    })
+    });
 }
 
 function createMinMaxRating() {
-    const minRating = document.querySelector('.filter__starsMinRating')
-    const maxRating = document.querySelector('.filter__starsMaxRating')
-    createStars(minRating, 0)
-    createStars(maxRating, 5)
+    const minRating = document.querySelector(".filter__starsMinRating");
+    const maxRating = document.querySelector(".filter__starsMaxRating");
+    createStars(minRating, 0);
+    createStars(maxRating, 5);
     Array.from(minRating.children).forEach((star, index) => {
         star.addEventListener("click", () => {
-            if(index + 1 === 1 && currentMinRating === 1){
+            if (index + 1 === 1 && currentMinRating === 1) {
                 currentMinRating = 0;
             } else {
                 currentMinRating = index + 1;
             }
-            if(currentMinRating > currentMaxRating){
+            if (currentMinRating > currentMaxRating) {
                 currentMaxRating = currentMinRating;
-            } 
+            }
             filterData(challenges);
             updateStars(minRating, maxRating);
-        })
-    })
+        });
+    });
     Array.from(maxRating.children).forEach((star, index) => {
         star.addEventListener("click", () => {
             currentMaxRating = index + 1;
-            if(currentMaxRating < currentMinRating){
+            if (currentMaxRating < currentMinRating) {
                 currentMinRating = currentMaxRating;
             }
             filterData(challenges);
             updateStars(minRating, maxRating);
-        })
-    })
+        });
+    });
 }
 
 createMinMaxRating();
