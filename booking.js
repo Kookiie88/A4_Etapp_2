@@ -195,10 +195,7 @@ function getMaxAndMinParticipants(obj) {
     minPar = obj.minParticipants;
     particiSelect.setAttribute("min", obj.minParticipants);
     particiSelect.setAttribute("max", obj.maxParticipants);
-    particiSelect.setAttribute(
-        "placeholder",
-        `Choose between ${minPar} and ${maxPar} participants`
-    );
+    particiSelect.setAttribute("placeholder", `Choose between ${minPar} - ${maxPar}`);
 }
 
 //function that creats the available times
