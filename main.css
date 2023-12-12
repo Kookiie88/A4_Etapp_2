@@ -1279,6 +1279,13 @@ html {
 .filter__inputFilter:focus {
   outline-width: 0;
 }
+.filter__share {
+  width: fit-content;
+  align-self: flex-end;
+  margin: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
 .filter__starsMinRating {
   color: red;
   cursor: pointer;
@@ -1327,8 +1334,19 @@ html {
 }
 .filter__checkboxLabel {
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0%;
+    scale: 80%;
+  }
+  100% {
+    opacity: 100%;
+    scale: 100%;
+  }
+}
 /*----theStory page----*/
 .hero {
   display: flex;
@@ -1580,15 +1598,4 @@ html {
   font-weight: bold;
   font-size: 20px;
   margin-bottom: 10px;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0%;
-    scale: 80%;
-  }
-  100% {
-    opacity: 100%;
-    scale: 100%;
-  }
 }

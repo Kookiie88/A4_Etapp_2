@@ -120,6 +120,14 @@
         }
     }
 
+    &__share {
+        width: fit-content;
+        align-self: flex-end;
+        margin: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
     &__starsMinRating {
         color: red;
         cursor: pointer;
@@ -173,6 +181,7 @@
     }
     &__checkboxLabel {
         margin-bottom: 10px;
+        cursor: pointer;
     }
 }
 
