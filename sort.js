@@ -8,9 +8,9 @@ function sortByRating(direction, array) {
         const aRating = a["data-rating"];
         const bRating = b["data-rating"];
         if(direction === "ascending") {
-            return bRating - aRating;
-        } else {
             return aRating - bRating;
+        } else {
+            return bRating - aRating;
         }
     });
     sortedArray.forEach((challenge) => {
@@ -23,14 +23,21 @@ function sortByTitle(direction, array) {
         const aTitle = a.querySelector(".sidescroll__title").textContent;
         const bTitle = b.querySelector(".sidescroll__title").textContent;
         if(direction === "ascending") {
-            return bTitle.localeCompare(aTitle);
-        } else {
             return aTitle.localeCompare(bTitle);
+        } else {
+            return bTitle.localeCompare(aTitle);
         }
     });
     sortedArray.forEach((challenge) => {
         challenge.parentNode.appendChild(challenge);
     });
+}
+
+function toggleArrows(showArrow, hideArrow, direction) {
+    const arrow = showArrow.firstElementChild;
+    const hideArrowArrow = hideArrow.firstElementChild;
+    hideArrowArrow.classList = "";
+    arrow.classList = direction === "ascending" ? "fa fa-arrow-up" : "fa fa-arrow-down";
 }
 
 toggleMenuBtn.addEventListener("click", () => {
@@ -40,23 +47,18 @@ toggleMenuBtn.addEventListener("click", () => {
     menu.style.visibility = visibility === "hidden" ? "visible" : "";
 });
 
-byRating.addEventListener("click", () => {
+byRating.addEventListener("click", (e) => {
     const challengesArray = [...document.querySelectorAll(".sidescroll__card")];
-    const direction = challengesArray[0]["data-rating"] > 1 ? "descending" : "ascending";
-    const arrow = byRating.firstElementChild;
-    const byTitleArrow = byTitle.firstElementChild;
-    byTitleArrow.classList = "";
-    arrow.classList = direction === "ascending" ? "fa fa-arrow-down" : "fa fa-arrow-up";
+    e.target['data-direction'] = e.target['data-direction'] === "descending" ? "ascending" : "descending";
+    const direction = e.target['data-direction'];
+    toggleArrows(byRating, byTitle, direction);
     sortByRating(direction, challengesArray);
 });
 
-byTitle.addEventListener("click", () => {
+byTitle.addEventListener("click", (e) => {
     const challengesArray = [...document.querySelectorAll(".sidescroll__card")];
-    const firstTitle = challengesArray[0].querySelector('.sidescroll__title').textContent;
-    const direction = firstTitle.charCodeAt(0) > 78 ? "descending" : "ascending";
-    const arrow = byTitle.firstElementChild;
-    const byRatingArrow = byRating.firstElementChild;
-    byRatingArrow.classList = "";
-    arrow.classList = direction === "ascending" ? "fa fa-arrow-down" : "fa fa-arrow-up";
+    e.target['data-direction'] = e.target['data-direction'] === "ascending" ? "descending" : "ascending";
+    const direction = e.target['data-direction'];
+    toggleArrows(byTitle, byRating, direction);
     sortByTitle(direction, challengesArray);
 });
