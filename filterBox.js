@@ -7,6 +7,7 @@ const inputFilter = document.querySelector(".filter__inputFilter");
 const openSearchBox = document.querySelector(".filter__filterBoxOpenButton");
 const searchBox = document.querySelector(".filter__filterBox");
 const closeSearchBox = document.querySelector(".filter__closeButton");
+const shareBtn = document.querySelector(".filter__share");
 
 //Setting current min and max rating
 let currentMinRating = 0;
@@ -39,6 +40,17 @@ closeSearchBox.addEventListener("click", () => {
     searchBox.style.display = "";
     openSearchBox.style.display = "";
     searchBox.classList.remove("filter__filterBox--open");
+});
+shareBtn.addEventListener("click", () => {
+    const shareText = document.querySelector(".filter__shareText");
+    const arrow = shareText.nextElementSibling;
+    navigator.clipboard.writeText(window.location.href);
+    shareText.textContent = "Copied!";
+    arrow.style.display = "none";
+    setTimeout(() => {
+        shareText.textContent = "Share";
+        arrow.style.display = "";
+    }, 1000);
 });
 
 /*
