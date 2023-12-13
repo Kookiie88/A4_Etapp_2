@@ -7,15 +7,16 @@ const inputFilter = document.querySelector(".filter__inputFilter");
 const openSearchBox = document.querySelector(".filter__filterBoxOpenButton");
 const searchBox = document.querySelector(".filter__filterBox");
 const closeSearchBox = document.querySelector(".filter__closeButton");
-
-//Setting current min and max rating
-let currentMinRating = 0;
-let currentMaxRating = 5;
+const shareBtn = document.querySelector(".filter__share");
 
 //Getting search params from URL
 const searchParams = new URL(document.location).searchParams;
 onlineCheckbox.checked = searchParams.get("online") !== "false";
 onSiteCheckbox.checked = searchParams.get("onsite") !== "false";
+
+//Setting current min and max rating
+let currentMinRating = searchParams.get("minRating") || 0;
+let currentMaxRating = searchParams.get("maxRating") || 5;
 
 //Event listeners for the filter options
 onlineCheckbox.addEventListener("change", () => {
@@ -39,6 +40,17 @@ closeSearchBox.addEventListener("click", () => {
     searchBox.style.display = "";
     openSearchBox.style.display = "";
     searchBox.classList.remove("filter__filterBox--open");
+});
+shareBtn.addEventListener("click", () => {
+    const shareText = document.querySelector(".filter__shareText");
+    const arrow = shareText.nextElementSibling;
+    navigator.clipboard.writeText(window.location.href);
+    shareText.textContent = "Copied!";
+    arrow.style.display = "none";
+    setTimeout(() => {
+        shareText.textContent = "Share";
+        arrow.style.display = "";
+    }, 1000);
 });
 
 /*
@@ -235,8 +247,8 @@ function updateStars(minRating, maxRating) {
 function createMinMaxRating() {
     const minRating = document.querySelector(".filter__starsMinRating");
     const maxRating = document.querySelector(".filter__starsMaxRating");
-    createStars(minRating, 0);
-    createStars(maxRating, 5);
+    createStars(minRating, currentMinRating);
+    createStars(maxRating, currentMaxRating);
     Array.from(minRating.children).forEach((star, index) => {
         star.addEventListener("click", () => {
             if (index + 1 === 1 && currentMinRating === 1) {
@@ -246,7 +258,9 @@ function createMinMaxRating() {
             }
             if (currentMinRating > currentMaxRating) {
                 currentMaxRating = currentMinRating;
+                setSearchParams("maxRating", currentMaxRating);
             }
+            setSearchParams("minRating", currentMinRating);
             filterData(challenges);
             updateStars(minRating, maxRating);
         });
@@ -256,7 +270,9 @@ function createMinMaxRating() {
             currentMaxRating = index + 1;
             if (currentMaxRating < currentMinRating) {
                 currentMinRating = currentMaxRating;
+                setSearchParams("minRating", currentMinRating);
             }
+            setSearchParams("maxRating", currentMaxRating);
             filterData(challenges);
             updateStars(minRating, maxRating);
         });

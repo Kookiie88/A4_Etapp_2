@@ -1288,6 +1288,13 @@ html {
 .filter__inputFilter:focus {
   outline-width: 0;
 }
+.filter__share {
+  width: fit-content;
+  align-self: flex-end;
+  margin: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
 .filter__starsMinRating {
   color: red;
   cursor: pointer;
@@ -1336,6 +1343,7 @@ html {
 }
 .filter__checkboxLabel {
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 @keyframes fadeIn {
