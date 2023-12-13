@@ -31,8 +31,10 @@ html {
         overflow: hidden;
     }
 }
+
 /*-----Header section-----*/
 @import "header";
+
 /*-----Main section-----*/
 .main {
     align-items: center;
@@ -46,6 +48,7 @@ html {
             display: none;
         }
     }
+
     &__hackerImgWide {
         display: none;
         width: 100vw;
@@ -54,6 +57,7 @@ html {
             display: block;
         }
     }
+
     &__popularTitle {
         font-size: 1.3rem;
         font-weight: 400;
@@ -63,6 +67,7 @@ html {
         @include breakpoint($medium) {
             font-size: 1.5rem;
         }
+
         @include breakpointMax($xs) {
             font-size: 1rem;
         }
@@ -96,22 +101,26 @@ html {
         height: 219px;
         width: 363px;
     }
+
     &__title {
         font-size: 28px;
         margin: 0;
         margin: 0px 17px;
         margin-top: 12px;
     }
+
     &__rating {
         margin: 0px 17px;
         margin-bottom: 23px;
     }
+
     &__participants {
         display: inline-block;
         font-size: 14px;
         font-weight: 400;
         margin-left: 15px;
     }
+
     &__text {
         color: #000000;
         font-size: 18px;
@@ -119,6 +128,7 @@ html {
         margin: 0px 17px;
         white-space: normal;
     }
+
     &__btn {
         align-self: flex-end;
         background-color: #e3170a;
@@ -144,9 +154,11 @@ html {
         flex-direction: row-reverse;
         justify-content: center;
     }
+
     @include breakpoint($xxl) {
         transform: scale(1.2);
     }
+
     &__onSiteBtn {
         background-color: #8acfe5;
         border: none;
@@ -163,6 +175,7 @@ html {
             background-color: #7fbfd4;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
         }
+
         &:active {
             background-color: #8acfe5;
             transform: scale(0.98);
@@ -171,11 +184,13 @@ html {
         @include breakpointMax($xs) {
             width: fit-content;
         }
+
         @include breakpoint($small) {
             margin-left: 8.5px;
             margin-top: 0px;
         }
     }
+
     &__onlineBtn {
         background-color: transparent;
         border: none;
@@ -194,6 +209,7 @@ html {
                 box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
             }
         }
+
         &:active {
             @include breakpoint($small) {
                 background-color: #e3170a;
@@ -213,6 +229,7 @@ html {
             width: 308px;
         }
     }
+
     &--offSet {
         @include breakpoint($small) {
             bottom: 33px;
@@ -220,11 +237,13 @@ html {
             position: relative;
         }
     }
+
     &--moreTopMargin {
         @include breakpoint($medium) {
             margin-top: 77px;
         }
     }
+
     & a {
         text-align: center;
     }
@@ -243,6 +262,7 @@ html {
             margin-top: 74px;
         }
     }
+
     &__img {
         height: 72px;
         margin-right: 22px;
@@ -253,6 +273,7 @@ html {
             width: 96px;
         }
     }
+
     &__text {
         font-weight: 400;
         max-width: 343.26px;
@@ -261,10 +282,12 @@ html {
             max-width: 407px;
         }
     }
+
     &__quote {
         font-style: italic;
         margin: 0px;
     }
+
     &__name {
         font-size: 0.8rem;
         height: 21px;
@@ -275,6 +298,7 @@ html {
             max-width: 300px;
         }
     }
+
     &__review--hidden {
         display: none;
         margin-left: 1rem;
@@ -282,9 +306,11 @@ html {
         @include breakpoint($large) {
             display: flex;
         }
+
         @include breakpoint($xxl) {
             margin-left: 8rem;
         }
+
         &__text {
             width: 415px;
         }
@@ -308,9 +334,11 @@ html {
     @include breakpoint($xl) {
         margin-top: 87px;
     }
+
     @include breakpoint($xxl) {
         height: 600px;
     }
+
     &::-webkit-scrollbar {
         display: none;
     }
@@ -338,6 +366,7 @@ html {
         height: 219px;
         width: 363px;
     }
+
     &__icon {
         color: rgba(255, 0, 0, 0.7);
         font-size: 1.5rem;
@@ -345,17 +374,20 @@ html {
         top: 15px;
         right: 15px;
     }
+
     &__title {
         font-size: 28px;
         margin: 16px 16px 0;
         font-weight: normal;
     }
+
     &__rating {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin: 0px 16px;
         margin-bottom: 20px;
+
         &__stars {
             display: flex;
             gap: 6px;
@@ -369,6 +401,7 @@ html {
         font-size: 14px;
         font-weight: 400;
     }
+
     &__text {
         color: #000000;
         font-size: 18px;
@@ -377,6 +410,7 @@ html {
         white-space: normal;
         flex-grow: 1;
     }
+
     &__btn {
         align-self: flex-end;
         background-color: #e3170a;
@@ -396,6 +430,7 @@ html {
             background-color: #d11609;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
         }
+
         &:active {
             background-color: #e3170a;
             transform: scale(0.98);
@@ -430,6 +465,7 @@ html {
     @include breakpoint($large) {
         margin-top: 87px;
     }
+
     &__text {
         color: #ffffff;
         font-size: 1.2rem;
@@ -441,13 +477,16 @@ html {
         @include breakpointMax($xs) {
             font-size: 1rem;
         }
+
         @include breakpoint($medium) {
             max-width: 632px;
         }
+
         @include breakpoint($xxl) {
             font-size: 1.6rem;
         }
     }
+
     &__btn {
         background-color: #021928;
         border: solid 2px #8acfe5;
@@ -463,9 +502,11 @@ html {
         @include breakpointMax($xs) {
             width: fit-content;
         }
+
         @include breakpoint($large) {
             margin-top: 44px;
         }
+
         @include breakpoint($xxl) {
             transform: scale(1.2);
         }
@@ -474,6 +515,7 @@ html {
             border-color: #ffffff;
             color: #ffffff;
         }
+
         &:active {
             transform: scale(0.98);
             border-color: #8acfe5;
@@ -487,6 +529,7 @@ html {
         display: flex;
         width: 100vw;
     }
+
     &__content {
         @include breakpoint($large) {
             align-items: center;
@@ -496,6 +539,7 @@ html {
             width: 50vw;
         }
     }
+
     &__img {
         height: auto;
         width: 100vw;
@@ -504,6 +548,7 @@ html {
             width: 50vw;
         }
     }
+
     &__title {
         font-size: 1.3rem;
         font-weight: 700;
@@ -516,10 +561,12 @@ html {
             margin-top: 60px;
             width: 416px;
         }
+
         @include breakpoint($xxl) {
             font-size: 1.5rem;
         }
     }
+
     &__text {
         font-weight: 400;
         margin: 25px 20px 25px 20px;
@@ -528,10 +575,12 @@ html {
         @include breakpoint($large) {
             width: 416px;
         }
+
         @include breakpoint($xxl) {
             font-size: 1.2rem;
         }
     }
+
     &__btn {
         background-color: #e3170a;
         border: none;
@@ -549,6 +598,7 @@ html {
             background-color: #d11609;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
         }
+
         &:active {
             background-color: #e3170a;
         }
@@ -556,20 +606,24 @@ html {
         @include breakpointMax($xs) {
             width: fit-content;
         }
+
         @include breakpoint($large) {
             margin: 0;
             margin-bottom: 66px;
             position: relative;
             transform: translateX(-55px);
         }
+
         @include breakpoint($xxl) {
             transform: translateX(-25px) scale(1.2);
         }
     }
+
     &--reversed {
         flex-direction: row-reverse;
     }
 }
+
 /*-----Footer section-----*/
 @import "footer";
 
@@ -582,3 +636,6 @@ html {
 
 /*----theStory page----*/
 @import "theStory";
+
+/*----contact page-----*/
+@import "contact";
