@@ -1593,6 +1593,12 @@ html {
 }
 
 /*----contact page-----*/
+h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -1601,4 +1607,79 @@ html {
   width: 60%;
   margin-left: auto;
   margin-right: auto;
+}
+.contact-form__form-title {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgb(147, 142, 142);
+}
+.contact-form__title-and-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.contact-form__title {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.contact-form__input {
+  height: 35px;
+  width: 80%;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(248, 248, 248);
+}
+.contact-form__input:hover {
+  transform: scale(1.05);
+}
+.contact-form__input:focus {
+  outline: none;
+  border: solid 2px rgb(239, 238, 238);
+}
+@media screen and (min-width: 960px) {
+  .contact-form .message {
+    height: 90px;
+  }
+}
+
+.not-form {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 960px) {
+  .not-form {
+    margin-top: 20px;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+.not-form__title {
+  margin-top: 10px;
+  margin-bottom: 10;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.not-form__adress {
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 1px;
+}
+@media screen and (min-width: 960px) {
+  .not-form__adress {
+    margin-top: 0;
+  }
+}
+.not-form__instagram {
+  text-align: center;
+  margin-bottom: 1px;
+}
+.not-form__phone {
+  text-align: center;
+  margin-bottom: 1px;
 }
