@@ -77,6 +77,7 @@ html {
     gap: 38px;
     padding-top: 30px;
     margin: 52px;
+    margin-top: 0;
 
     &__card {
         border-radius: 8px;
@@ -579,6 +580,9 @@ html {
 
 /*----searchBox section----*/
 @import "searchBox";
+
+/*----sort section----*/
+@import "sort";
 
 /*----theStory page----*/
 @import "theStory";

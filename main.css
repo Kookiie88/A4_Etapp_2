@@ -248,6 +248,7 @@ html {
   gap: 38px;
   padding-top: 30px;
   margin: 52px;
+  margin-top: 0;
 }
 .ourChallenges__card {
   border-radius: 8px;
@@ -1359,6 +1360,56 @@ html {
     scale: 100%;
   }
 }
+
+/*----sort section----*/
+.sortBy__sortChallenges {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  align-items: flex-end;
+}
+.sortBy__sortChallenges-btn {
+  display: flex;
+  justify-content: space-between;
+  font-size: 26px;
+  width: 120px;
+  background-color: #011827;
+  border-radius: 6px;
+  align-self: flex-end;
+  color: white;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.sortBy__sortChallenges-btn > i {
+  align-self: center;
+}
+.sortBy__sortChallenges-btn:hover {
+  color: #8acfe5;
+}
+.sortBy__sortChallenges-content {
+  background-color: #011827;
+  border-radius: 0 0 6px 6px;
+  text-align: left;
+  width: 120px;
+  color: white;
+  visibility: hidden;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 16px 8px 16px;
+  position: relative;
+  top: 0;
+  cursor: pointer;
+}
+.sortBy__sortChallenges-content > span {
+  display: flex;
+  justify-content: space-between;
+}
+.sortBy__sortChallenges-content > span:hover {
+  color: #8acfe5;
+}
+
 /*----theStory page----*/
 .hero {
   display: flex;

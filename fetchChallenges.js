@@ -45,6 +45,7 @@ function createChallenge(challenge) {
     const participants = template.querySelector(".sidescroll__participants");
     const description = template.querySelector(".sidescroll__text");
     const button = template.querySelector(".sidescroll__btn");
+    card['data-rating'] = challenge.rating;
     button.textContent = challenge.type === "online" ? "Take challenge online" : "Book this room";
     icon.classList.add(challenge.type === "online" ? "fa-laptop" : "fa-house");
     card.id = challenge.id;
