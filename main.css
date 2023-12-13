@@ -32,6 +32,9 @@ html {
 .logoAndTitle {
   display: flex;
 }
+.logoAndTitle a {
+  text-decoration: none;
+}
 .logoAndTitle__logo {
   height: 82px;
   margin-left: 27px;
@@ -1049,6 +1052,14 @@ html {
   border-radius: 5px;
   border: solid lightgrey;
 }
+.booking-container__number-input {
+  width: 80%;
+  max-width: 300px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  border: solid lightgrey;
+}
 .booking-container__select {
   width: 80%;
   max-width: 300px;
@@ -1281,6 +1292,13 @@ html {
 .filter__inputFilter:focus {
   outline-width: 0;
 }
+.filter__share {
+  width: fit-content;
+  align-self: flex-end;
+  margin: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
 .filter__starsMinRating {
   color: red;
   cursor: pointer;
@@ -1329,6 +1347,7 @@ html {
 }
 .filter__checkboxLabel {
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 @keyframes fadeIn {
@@ -1341,6 +1360,7 @@ html {
     scale: 100%;
   }
 }
+
 /*----sort section----*/
 .sortBy__sortChallenges {
   position: relative;

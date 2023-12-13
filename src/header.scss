@@ -15,6 +15,10 @@
 .logoAndTitle {
     display: flex;
 
+    & a {
+        text-decoration: none;
+    }
+
     &__logo {
         height: 82px;
         margin-left: 27px;

@@ -28,8 +28,8 @@
 <body class="body">
     <header class="header">
         <div class="logoAndTitle">
-            <img class="logoAndTitle__logo" src="assets/image 4.png" alt="ESC-Logo" />
-            <h1 class="logoAndTitle__title">Hacker Escape Rooms</h1>
+            <a href="index.html"><img class="logoAndTitle__logo" src="assets/image 4.png" alt="ESC-Logo" /></a>
+            <a href="index.html"><h1 class="logoAndTitle__title">Hacker Escape Rooms</h1></a>
             <button class="logoAndTitle__hamburgerBtn">
                 <img src="assets/Group 7.png" alt="" />
             </button>
@@ -39,7 +39,7 @@
                 <a href="ourChallenges.html?onsite=false">Play online</a>
             </li>
             <li class="navbar__navItem"><a href="ourChallenges.html?online=false">Play on-site</a></li>
-            <li class="navbar__navItem"><a href="index.html">The story</a></li>
+            <li class="navbar__navItem"><a href="theStory.html">The story</a></li>
             <li class="navbar__navItem"><a href="index.html">Contact us</a></li>
         </ul>
         <section class="hamburgerMenu">
@@ -50,7 +50,7 @@
                 <ul class="hamburgerMenu__menu">
                     <li class="hamburgerMenu__item"><a href="ourChallenges.html?onsite=false">Play online</a></li>
                     <li class="hamburgerMenu__item"><a href="ourChallenges.html?online=false">Play on-site</a></li>
-                    <li class="hamburgerMenu__item"><a href="">The story</a></li>
+                    <li class="hamburgerMenu__item"><a href="theStory.html">The story</a></li>
                     <li class="hamburgerMenu__item"><a href="">Contact us</a></li>
                 </ul>
             </div>
@@ -94,6 +94,10 @@
                     <h4 class="filter__h4 filter__h4Keyword">Or type to search for keyword</h4>
                     <input type="text" class="filter__inputFilter" placeholder="Start typing to filter" />
                 </div>
+                <div class="filter__share">
+                    <span class="filter__shareText">Share</span>
+                    <i class="fa fa-share"></i>
+                </div>
             </div>
         </section>
         <div class="sortBy">
@@ -129,7 +133,7 @@
         </div>
         <ul class="lowerNav lowerNav--marginLeft">
             <h4 class="lowerNav__title">Site map</h4>
-            <li class="lowerNav__item"><a href="">The story</a></li>
+            <li class="lowerNav__item"><a href="theStory.html">The story</a></li>
             <li class="lowerNav__item"><a href="">Contact Us</a></li>
             <li class="lowerNav__item"><a href="">Legal</a></li>
             <br />
@@ -206,6 +210,9 @@
                             class="booking-container__e-mail-input"
                             required
                         />
+                        <small class="booking-container__input-title">Phone number</small>
+                        <input type="tel" class="booking-container__number-input" pattern="[0-9]{10}" required
+                        title="Please enter a ten digit phone number" />
                         <small class="booking-container__input-title">What time?</small>
                         <select name="time" class="booking-container__select time"></select>
                         <small class="booking-container__input-title">How many participants?</small>
