@@ -32,6 +32,9 @@ html {
 .logoAndTitle {
   display: flex;
 }
+.logoAndTitle a {
+  text-decoration: none;
+}
 .logoAndTitle__logo {
   height: 82px;
   margin-left: 27px;
