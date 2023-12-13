@@ -187,6 +187,9 @@
                             class="booking-container__e-mail-input"
                             required
                         />
+                        <small class="booking-container__input-title">Phone number</small>
+                        <input type="tel" class="booking-container__number-input" pattern="[0-9]{10}" required
+                        title="Please enter a ten digit phone number" />
                         <small class="booking-container__input-title">What time?</small>
                         <select name="time" class="booking-container__select time"></select>
                         <small class="booking-container__input-title">How many participants?</small>
@@ -203,9 +206,6 @@
                             class="booking-container__submit-button"
                         />
                     </div>
-                <div class="booking-container__button-div-two">
-                    <input type="submit" value="Submit booking" class="booking-container__submit-button" />
-                </div>
             </form>
             <div class="booking-container__step-three invisible">
                 <h1 class="booking-container__title thank-you">Thank you!</h1>
