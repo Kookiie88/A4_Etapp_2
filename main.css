@@ -1032,9 +1032,6 @@ html {
 .booking-container .invisible {
   display: none;
 }
-.booking-container__select {
-  width: 300px;
-}
 .booking-container__name-input {
   width: 80%;
   max-width: 300px;
@@ -1060,11 +1057,15 @@ html {
   border: solid lightgrey;
 }
 .booking-container__select {
-  width: 200px;
+  width: 80%;
+  max-width: 300px;
   height: 40px;
   padding: 5px;
   border-radius: 5px;
   border: solid lightgrey;
+}
+.booking-container__select[name=time] {
+  max-width: 75px;
 }
 .booking-container__submit-button {
   background-color: #e3170a;
