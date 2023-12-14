@@ -505,6 +505,17 @@ html {
   flex-direction: column;
   height: 446px;
   width: 363px;
+  animation: growInCard 0.7s ease-out forwards;
+}
+@keyframes growInCard {
+  0% {
+    opacity: 0;
+    scale: 95%;
+  }
+  100% {
+    opacity: 1;
+    scale: 100%;
+  }
 }
 .sidescroll__card:hover {
   box-shadow: 0 0 15px 5px #b6bdb5;
@@ -1166,6 +1177,14 @@ html {
     opacity: 1;
   }
 }
+@keyframes fadeInCard {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes growIn {
   0% {
     scale: 70%;
@@ -1360,7 +1379,6 @@ html {
     scale: 100%;
   }
 }
-
 /*----sort section----*/
 .sortBy__sortChallenges {
   position: relative;
