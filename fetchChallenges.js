@@ -1,5 +1,8 @@
 const data = await fetchData(`https://lernia-sjj-assignments.vercel.app/api/challenges`).catch(
-    (error) => console.log(error.message)
+    (error) => {
+        console.log(error.message);
+        renderError();
+    }
 );
 
 async function fetchData(url) {
@@ -12,12 +15,9 @@ async function fetchData(url) {
 }
 
 export const challenges = data?.challenges;
-if (window.location.pathname.includes("ourChallenges")) {
-    const container = document.querySelector(".ourChallenges");
-    renderChallenges(container);
-} else {
-    const container = document.querySelector(".sidescroll");
-    renderChallenges(container, true);
+const container = document.querySelector(".sidescroll") || document.querySelector(".ourChallenges");
+if(container) {
+    renderChallenges(container, container === document.querySelector(".sidescroll"));
 }
 
 function renderChallenges(container, threeHighest) {
@@ -34,6 +34,17 @@ function renderChallenges(container, threeHighest) {
         const challengeEl = createChallenge(challenge);
         container.appendChild(challengeEl);
     });
+}
+
+function renderError() {
+    const loadingIndicator = document.querySelector(".loading");
+    const container = document.querySelector(".sidescroll") || document.querySelector(".ourChallenges");
+    if(container && loadingIndicator) {
+        const h3 = document.createElement("h3");
+        h3.textContent = "Something went wrong with the request. Please try again later.";
+        container.appendChild(h3);
+        loadingIndicator.style.display = "none";
+    }
 }
 
 function createChallenge(challenge) {
