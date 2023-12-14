@@ -1177,14 +1177,6 @@ html {
     opacity: 1;
   }
 }
-@keyframes fadeInCard {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 @keyframes growIn {
   0% {
     scale: 70%;
@@ -1563,7 +1555,7 @@ html {
   }
 }
 .companyStory__imageTwo {
-  background: url(../assets/three-screens.jpg);
+  background: url(assets/three-screens.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1575,7 +1567,7 @@ html {
   }
 }
 .companyStory__imageThree {
-  background: url(../assets/code.jpg);
+  background: url(assets/code.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1587,7 +1579,7 @@ html {
   }
 }
 .companyStory__imageFour {
-  background: url(../assets/teamwork.jpg);
+  background: url(assets/teamwork.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1640,32 +1632,32 @@ html {
   margin-bottom: 20px;
 }
 .employees__cardImage.employees__cardImageOne {
-  background: url(../assets/employeeOne.png);
+  background: url(assets/employeeOne.png);
   background-size: cover;
   background-position: center;
 }
 .employees__cardImage.employees__cardImageTwo {
-  background: url(../assets/employeeTwo.png);
+  background: url(assets/employeeTwo.png);
   background-size: cover;
   background-position: center;
 }
 .employees__cardImage.employees__cardImageThree {
-  background: url(../assets/employeeOne.png);
+  background: url(assets/employeeOne.png);
   background-size: cover;
   background-position: center;
 }
 .employees__cardImage.employees__cardImageFour {
-  background: url(../assets/employeeTwo.png);
+  background: url(assets/employeeTwo.png);
   background-size: cover;
   background-position: center;
 }
 .employees__cardImage.employees__cardImageFive {
-  background: url(../assets/employeeOne.png);
+  background: url(assets/employeeOne.png);
   background-size: cover;
   background-position: center;
 }
 .employees__cardImage.employees__cardImageSix {
-  background: url(../assets/employeeTwo.png);
+  background: url(assets/employeeTwo.png);
   background-size: cover;
   background-position: center;
 }
