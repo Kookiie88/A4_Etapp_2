@@ -21,7 +21,9 @@ if (window.location.pathname.includes("ourChallenges")) {
 }
 
 function renderChallenges(container, threeHighest) {
+    const loadingIndicator = document.querySelector(".loading");
     if (!challenges) return;
+    loadingIndicator.style.display = "none";
     let challengesToRender;
     if (threeHighest) {
         challengesToRender = challenges.sort((a, b) => b.rating - a.rating).slice(0, 3);
