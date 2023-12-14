@@ -324,7 +324,7 @@ html {
         flex-direction: column;
         height: 446px;
         width: 363px;
-        animation: growInCard 0.7s ease-out forwards;
+        animation: growInCard 0.2s ease-in forwards;
     }
 
     @keyframes growInCard{

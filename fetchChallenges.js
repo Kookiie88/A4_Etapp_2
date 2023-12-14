@@ -33,7 +33,7 @@ function renderChallenges(container, threeHighest) {
         setTimeout(() =>{
             const challengeEl = createChallenge(challenge);
             container.appendChild(challengeEl);
-        }, 90 * i++)
+        }, 50 * i++)
     });
 }
 
