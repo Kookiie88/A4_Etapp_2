@@ -324,6 +324,14 @@ html {
         flex-direction: column;
         height: 446px;
         width: 363px;
+        animation: growInCard 0.2s ease-in forwards;
+    }
+
+    @keyframes growInCard{
+        0%{opacity: 0;
+        scale: 95%;}
+        100%{opacity: 1;
+        scale: 100%;}
     }
 
     &__card:hover {

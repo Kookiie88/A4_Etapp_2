@@ -28,9 +28,12 @@ function renderChallenges(container, threeHighest) {
     } else {
         challengesToRender = challenges;
     }
+    let i = 1;
     challengesToRender.forEach((challenge) => {
-        const challengeEl = createChallenge(challenge);
-        container.appendChild(challengeEl);
+        setTimeout(() =>{
+            const challengeEl = createChallenge(challenge);
+            container.appendChild(challengeEl);
+        }, 50 * i++)
     });
 }
 
