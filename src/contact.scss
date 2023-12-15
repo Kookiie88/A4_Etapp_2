@@ -55,6 +55,26 @@ h1 {
             height: 90px;
         }
     }
+
+    &__button {
+        margin-top: 10px;
+        background-color: #8acfe5;
+        border: none;
+        border-radius: 4px;
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 0.7rem;
+        font-weight: 700;
+        height: 66px;
+        width: 80%;
+        max-width: 308px;
+        float: right;
+        margin: 20px;
+        &:hover {
+            background-color: #7fbfd4;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+    }
 }
 
 .not-form {
@@ -91,6 +111,13 @@ h1 {
     &__instagram {
         text-align: center;
         margin-bottom: 1px;
+        color: #000;
+        &:visited {
+            color: #000;
+        }
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     &__phone {
@@ -98,5 +125,18 @@ h1 {
         margin-bottom: 1px;
     }
 }
+
+.pin {
+    color: #e3170a;
+}
+
+.instagram {
+    color: #d6249f;
+}
+
+.phone {
+    color: green;
+}
+
 
 

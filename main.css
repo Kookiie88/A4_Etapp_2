@@ -1643,6 +1643,25 @@ h1 {
     height: 90px;
   }
 }
+.contact-form__button {
+  margin-top: 10px;
+  background-color: #8acfe5;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 700;
+  height: 66px;
+  width: 80%;
+  max-width: 308px;
+  float: right;
+  margin: 20px;
+}
+.contact-form__button:hover {
+  background-color: #7fbfd4;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
 
 .not-form {
   margin-left: auto;
@@ -1678,8 +1697,27 @@ h1 {
 .not-form__instagram {
   text-align: center;
   margin-bottom: 1px;
+  color: #000;
+}
+.not-form__instagram:visited {
+  color: #000;
+}
+.not-form__instagram:hover {
+  cursor: pointer;
 }
 .not-form__phone {
   text-align: center;
   margin-bottom: 1px;
+}
+
+.pin {
+  color: #e3170a;
+}
+
+.instagram {
+  color: #d6249f;
+}
+
+.phone {
+  color: green;
 }
