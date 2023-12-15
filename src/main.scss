@@ -82,6 +82,7 @@ html {
     gap: 38px;
     padding-top: 30px;
     margin: 52px;
+    margin-top: 0;
 
     &__card {
         border-radius: 8px;
@@ -351,6 +352,14 @@ html {
         flex-direction: column;
         height: 446px;
         width: 363px;
+        animation: growInCard 0.2s ease-in forwards;
+    }
+
+    @keyframes growInCard{
+        0%{opacity: 0;
+        scale: 95%;}
+        100%{opacity: 1;
+        scale: 100%;}
     }
 
     &__card:hover {
@@ -633,6 +642,9 @@ html {
 
 /*----searchBox section----*/
 @import "searchBox";
+
+/*----sort section----*/
+@import "sort";
 
 /*----theStory page----*/
 @import "theStory";

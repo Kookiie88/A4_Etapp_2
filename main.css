@@ -32,6 +32,9 @@ html {
 .logoAndTitle {
   display: flex;
 }
+.logoAndTitle a {
+  text-decoration: none;
+}
 .logoAndTitle__logo {
   height: 82px;
   margin-left: 27px;
@@ -245,6 +248,7 @@ html {
   gap: 38px;
   padding-top: 30px;
   margin: 52px;
+  margin-top: 0;
 }
 .ourChallenges__card {
   border-radius: 8px;
@@ -501,6 +505,17 @@ html {
   flex-direction: column;
   height: 446px;
   width: 363px;
+  animation: growInCard 0.2s ease-in forwards;
+}
+@keyframes growInCard {
+  0% {
+    opacity: 0;
+    scale: 95%;
+  }
+  100% {
+    opacity: 1;
+    scale: 100%;
+  }
 }
 .sidescroll__card:hover {
   box-shadow: 0 0 15px 5px #b6bdb5;
@@ -1032,9 +1047,6 @@ html {
 .booking-container .invisible {
   display: none;
 }
-.booking-container__select {
-  width: 300px;
-}
 .booking-container__name-input {
   width: 80%;
   max-width: 300px;
@@ -1051,12 +1063,24 @@ html {
   border-radius: 5px;
   border: solid lightgrey;
 }
+.booking-container__number-input {
+  width: 80%;
+  max-width: 300px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  border: solid lightgrey;
+}
 .booking-container__select {
-  width: 200px;
+  width: 80%;
+  max-width: 300px;
   height: 40px;
   padding: 5px;
   border-radius: 5px;
   border: solid lightgrey;
+}
+.booking-container__select[name=time] {
+  max-width: 75px;
 }
 .booking-container__submit-button {
   background-color: #e3170a;
@@ -1279,6 +1303,13 @@ html {
 .filter__inputFilter:focus {
   outline-width: 0;
 }
+.filter__share {
+  width: fit-content;
+  align-self: flex-end;
+  margin: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
 .filter__starsMinRating {
   color: red;
   cursor: pointer;
@@ -1327,6 +1358,7 @@ html {
 }
 .filter__checkboxLabel {
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 @keyframes fadeIn {
@@ -1339,6 +1371,55 @@ html {
     scale: 100%;
   }
 }
+/*----sort section----*/
+.sortBy__sortChallenges {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  align-items: flex-end;
+}
+.sortBy__sortChallenges-btn {
+  display: flex;
+  justify-content: space-between;
+  font-size: 26px;
+  width: 120px;
+  background-color: #011827;
+  border-radius: 6px;
+  align-self: flex-end;
+  color: white;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.sortBy__sortChallenges-btn > i {
+  align-self: center;
+}
+.sortBy__sortChallenges-btn:hover {
+  color: #8acfe5;
+}
+.sortBy__sortChallenges-content {
+  background-color: #011827;
+  border-radius: 0 0 6px 6px;
+  text-align: left;
+  width: 120px;
+  color: white;
+  visibility: hidden;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 16px 8px 16px;
+  position: relative;
+  top: 0;
+  cursor: pointer;
+}
+.sortBy__sortChallenges-content > span {
+  display: flex;
+  justify-content: space-between;
+}
+.sortBy__sortChallenges-content > span:hover {
+  color: #8acfe5;
+}
+
 /*----theStory page----*/
 .hero {
   display: flex;
@@ -1474,7 +1555,7 @@ html {
   }
 }
 .companyStory__imageTwo {
-  background: url(../assets/three-screens.jpg);
+  background: url(assets/three-screens.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1486,7 +1567,7 @@ html {
   }
 }
 .companyStory__imageThree {
-  background: url(../assets/code.jpg);
+  background: url(assets/code.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1498,7 +1579,7 @@ html {
   }
 }
 .companyStory__imageFour {
-  background: url(../assets/teamwork.jpg);
+  background: url(assets/teamwork.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1551,32 +1632,32 @@ html {
   margin-bottom: 20px;
 }
 .employees__cardImage.employees__cardImageOne {
-  background: url(../assets/employeeOne.png);
+  background: url(assets/employeeOne.png);
   background-size: cover;
   background-position: center;
 }
 .employees__cardImage.employees__cardImageTwo {
-  background: url(../assets/employeeTwo.png);
+  background: url(assets/employeeTwo.png);
   background-size: cover;
   background-position: center;
 }
 .employees__cardImage.employees__cardImageThree {
-  background: url(../assets/employeeOne.png);
+  background: url(assets/employeeOne.png);
   background-size: cover;
   background-position: center;
 }
 .employees__cardImage.employees__cardImageFour {
-  background: url(../assets/employeeTwo.png);
+  background: url(assets/employeeTwo.png);
   background-size: cover;
   background-position: center;
 }
 .employees__cardImage.employees__cardImageFive {
-  background: url(../assets/employeeOne.png);
+  background: url(assets/employeeOne.png);
   background-size: cover;
   background-position: center;
 }
 .employees__cardImage.employees__cardImageSix {
-  background: url(../assets/employeeTwo.png);
+  background: url(assets/employeeTwo.png);
   background-size: cover;
   background-position: center;
 }
