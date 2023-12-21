@@ -211,7 +211,7 @@ function byRating(filteredData) {
 //filter function by keyword search (Fredrick)
 function byKeyword(filteredData) {
     const inputText = inputFilter.value.toLowerCase();
-    if (!inputText) return filteredData;
+    if (inputText.length < 3) return filteredData;
     return filteredData.filter((challenge) => {
         const wordsToSearch = challenge.title.concat(challenge.description).toLowerCase();
         return wordsToSearch.includes(inputText);
